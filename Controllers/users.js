@@ -17,11 +17,9 @@ router.get('/', (req, res)=>{
                res.send(err)
            }
            client.query('SELECT * FROM "Karine".usersall WHERE ID = $1', [1])
+           
            .then(data=>{
-               return data.rows
-           })
-           .then(data1=>{
-               res.send(data1)
+               res.send(data.rows)
            })
            .catch(err=>{
                res.send(err)
